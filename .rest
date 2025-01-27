@@ -1,0 +1,58 @@
+curl -u alice:alicePassword http://85.92.121.181:111/instances
+
+###
+curl -u alice:alicePassword http://85.92.121.181:111/instances/54ccc8a0-9e595b78-838ae437-88673448-69c177d0
+
+###
+GET http://85.92.121.181:111/tools
+Authorization: Basic alice:alicePassword
+
+###
+
+POST http://85.92.121.181:111/instances
+Authorization: Basic alice:alicePassword
+Content-Type: application/dicom
+Content-Transfer-Encoding: binary
+
+< C:\Users\usero\Downloads\dicom_viewer_Mrbrain\us-palette.dcm
+
+###
+curl -X POST http://85.92.121.181:111/studies/ \
+     -H "Content-Type: application/zip" \
+     -u alice:alicePassword \
+     --data-binary "@C:\Users\usero\Downloads\ris\SAGYNDYKOVA_R_S_20240626.zip"
+
+
+###
+GET http://localhost:3500/study/670a9e401bc5ae97ef2695b1
+
+###
+curl -X GET http://85.92.121.181:111/studies/ \
+     -u alice:alicePassword \
+
+###
+curl -X GET http://85.92.121.181:111/studies/ef3c4c80-b421d95b-c4c74ad6-f9cd242e-4b7a54ed \
+     -u alice:alicePassword \
+
+###
+curl -X GET http://85.92.121.181:111/series/1e7598bb-a76458f3-477a2ffd-9e25ea21-a6184424 \
+     -u alice:alicePassword \
+
+###
+curl -X GET http://85.92.121.181:111/instances/54ccc8a0-9e595b78-838ae437-88673448-69c177d0/attachments/dicom/is-compressed \
+     -u alice:alicePassword \
+
+###
+curl -X POST http://85.92.121.181:111/instances/ \
+     -H "Content-Type: application/dicom" \
+     -u alice:alicePassword \
+     --data-binary "@C:\Users\usero\Downloads\ris\MALYUTIN_YE_S_20240624\series-00000\image-00000.dcm"
+
+
+###
+curl -X GET http://85.92.121.181:111/instances/54ccc8a0-9e595b78-838ae437-88673448-69c177d0/file \
+     -u alice:alicePassword \
+
+
+### 
+GET http://localhost:3500/study/instances/54ccc8a0-9e595b78-838ae437-88673448-69c177d0/file
