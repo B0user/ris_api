@@ -12,7 +12,7 @@ const
 
 require('dotenv').config();
 
-const PORT = process.env.PORT || 3500;
+const PORT = process.env.PORT || 2025;
 
 
 
