@@ -58,7 +58,7 @@ const ReportSchema = new Schema({
         text: { type: String, default: null},
         doctor_information: {
             // id: { type: ObjectId, ref: 'Doctor'},
-            fullname: { type: String },
+            fullname: { type: String, default: null },
         },
         // For possible future text-editor functionality
         templates_used: [String],
